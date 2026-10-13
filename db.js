@@ -1,11 +1,12 @@
 const {Pool} = require('pg');
+require('dotenv').config();
 
 const pool = new Pool({
-    host: 'localhost', 
-    port: 5432,
-    database: 'express_practice',
-    user: 'postgres',
-    password: 'Sasha23987h'
+    host: process.env.DB_HOST, 
+    port: Number(process.env.DB_PORT),
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD
 });
 
 async function initDb() {

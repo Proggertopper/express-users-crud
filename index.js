@@ -29,17 +29,17 @@ function validateUser(req , res , next){
     
 }
 
-function readUsers(){
-    const fileContent = fs.readFileSync('data.json' , "utf-8");
-    return JSON.parse(fileContent);
-}
+// function readUsers(){
+//     const fileContent = fs.readFileSync('data.json' , "utf-8");
+//     return JSON.parse(fileContent);
+// }
 
-function saveUsers(){
-    const json = JSON.stringify(users , null , 2);
-    fs.writeFileSync('data.json' , json)
-}
+// function saveUsers(){
+//     const json = JSON.stringify(users , null , 2);
+//     fs.writeFileSync('data.json' , json)
+// }
 
-const users = readUsers();
+// const users = readUsers();
 
 app.get("/" , (req , res)=>{
     res.send('My first express server works!');
